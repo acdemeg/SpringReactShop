@@ -1,13 +1,13 @@
 package com.spring.react.shop.entity;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
 @Table(name="\"Orders\"")
 public class Order {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
 
@@ -17,11 +17,15 @@ public class Order {
     @Column(name="total")
     private double total;
 
-    @Column(name="status")
+    @Column(name="status", insertable = false)
     private String status;
 
     @Column(name="\"orderCode\"")
     private String orderCode;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name="\"orderId\"")
+    private List<ProductsInOrder> productsInOrders;
 
     public Order(){}
 
@@ -30,6 +34,14 @@ public class Order {
         this.total = total;
         this.status = status;
         this.orderCode = orderCode;
+    }
+
+    public List<ProductsInOrder> getProductsInOrders() {
+        return productsInOrders;
+    }
+
+    public void setProductsInOrders(List<ProductsInOrder> productsInOrders) {
+        this.productsInOrders = productsInOrders;
     }
 
     public int getId() {

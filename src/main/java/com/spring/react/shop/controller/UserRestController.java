@@ -47,9 +47,8 @@ public class UserRestController {
         return user;
     }
 
-    @PutMapping("/users")
-    public User updateUser(@RequestBody User user){
-        userService.saveUser(user);
-        return user;
+    @PatchMapping("/users/{id}")
+    public User updateUser(@PathVariable int id, @RequestBody User usr){
+        return userService.updateUser(id, usr);
     }
 }

@@ -2,6 +2,7 @@ package com.spring.react.shop.service;
 
 import com.spring.react.shop.dao.UserDAO;
 import com.spring.react.shop.entity.User;
+import com.spring.react.shop.exception_handling.NoSuchModelException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,6 +31,23 @@ public class UserServiceImpl implements UserService{
     @Transactional
     public User getUser(int id) {
         return userDAO.getUser(id);
+    }
+
+    @Override
+    @Transactional
+    public User updateUser(int id, User usr) {
+        User user = this.getUser(id);
+
+        if(user == null){
+            throw new NoSuchModelException("There is no user with ID = " + id + " in Database");
+        }
+
+        user.setName(usr.getName());
+        user.setPhone(usr.getPhone());
+        user.setEmail(usr.getEmail());
+        user.setBalance(usr.getBalance());
+        user.setImagePath(usr.getImagePath());
+        return user;
     }
 
     @Override

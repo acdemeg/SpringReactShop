@@ -1,6 +1,7 @@
 package com.spring.react.shop.entity;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -24,14 +25,18 @@ public class User {
     @Column(name="balance")
     private double balance;
 
-    @Column(name="password", updatable = false)
+    @Column(name="password")
     private String password;
 
     @Column(name="role", insertable = false, updatable = false)
     private String role;
 
-    @Column(name="\"imagePath\"")
+    @Column(name="\"imagePath\"", updatable = false)
     private String imagePath;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="\"userId\"")
+    private List<Order> orders;
 
     public User() {
     }
