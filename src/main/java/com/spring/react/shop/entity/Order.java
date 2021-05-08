@@ -27,6 +27,22 @@ public class Order {
     @JoinColumn(name="\"orderId\"")
     private List<ProductsInOrder> productsInOrders;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "\"Product_in_Orders\"",
+            joinColumns = @JoinColumn(name = "\"orderId\""),
+            inverseJoinColumns = @JoinColumn(name = "\"productId\"")
+    )
+    private List<Product> products;
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
     public Order(){}
 
     public Order(int userId, double total, String status, String orderCode) {

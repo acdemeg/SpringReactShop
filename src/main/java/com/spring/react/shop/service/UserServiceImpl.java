@@ -35,6 +35,21 @@ public class UserServiceImpl implements UserService{
 
     @Override
     @Transactional
+    public User userLogin(User usr) {
+        User user = userDAO.userLogin(usr);
+
+        if(user == null){
+            throw new NoSuchModelException(
+                    "There is no user with Email = " + usr.getEmail() + " in Database");
+        }
+        else if(usr.getPassword().equals(user.getPassword())){
+            return user;
+        }
+        throw new NoSuchModelException("Password incorrect");
+    }
+
+    @Override
+    @Transactional
     public User updateUser(int id, User usr) {
         User user = this.getUser(id);
 

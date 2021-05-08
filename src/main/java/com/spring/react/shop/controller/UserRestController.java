@@ -47,6 +47,11 @@ public class UserRestController {
         return user;
     }
 
+    @PostMapping("/users/login")
+    public User userLogin(@RequestBody User user){
+        return userService.userLogin(user);
+    }
+
     @PatchMapping("/users/{id}")
     public User updateUser(@PathVariable int id, @RequestBody User usr){
         return userService.updateUser(id, usr);

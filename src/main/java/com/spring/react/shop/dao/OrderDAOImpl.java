@@ -17,14 +17,12 @@ public class OrderDAOImpl implements OrderDAO{
     private SessionFactory sessionFactory;
 
     @Override
-    @Transactional
     public List<Order> getAllOrders() {
         Session session = sessionFactory.getCurrentSession();
         return session.createQuery("from Order", Order.class).getResultList();
     }
 
     @Override
-    @Transactional
     public List<Order> getAllOrdersByUserId(int id) {
         Session session = sessionFactory.getCurrentSession();
         Query<Order> query = session.createQuery("from Order where userId =: id", Order.class);
@@ -33,21 +31,18 @@ public class OrderDAOImpl implements OrderDAO{
     }
 
     @Override
-    @Transactional
     public void saveOrder(Order order) {
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(order);
     }
 
     @Override
-    @Transactional
     public Order getOrder(int id) {
         Session session = sessionFactory.getCurrentSession();
         return session.get(Order.class, id);
     }
 
     @Override
-    @Transactional
     public void deleteOrder(int id) {
         Session session = sessionFactory.getCurrentSession();
         Query<Order> query = session.createQuery("delete from Order where id =: orderId" );

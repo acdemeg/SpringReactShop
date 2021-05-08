@@ -18,28 +18,24 @@ public class ProductDAOImpl implements ProductDAO{
     private SessionFactory sessionFactory;
 
     @Override
-    @Transactional
     public List<Product> getAllProducts() {
         Session session = sessionFactory.getCurrentSession();
         return session.createQuery("from Product", Product.class).getResultList();
     }
 
     @Override
-    @Transactional
     public void saveProduct(Product product) {
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(product);
     }
 
     @Override
-    @Transactional
     public Product getProduct(int id) {
         Session session = sessionFactory.getCurrentSession();
         return session.get(Product.class, id);
     }
 
     @Override
-    @Transactional
     public List<Product> getProductsById(Set<Integer> ids) {
         Session session = sessionFactory.getCurrentSession();
         Query<Product> query = session.createQuery("from Product where id in (:ids)");
@@ -48,7 +44,6 @@ public class ProductDAOImpl implements ProductDAO{
     }
 
     @Override
-    @Transactional
     public void deleteProduct(int id) {
         Session session = sessionFactory.getCurrentSession();
         Query<Product> query = session.createQuery("delete from Product where id =: productId");

@@ -11,6 +11,8 @@ public interface UserService {
 
     User getUser(int id);
 
+    User userLogin(User user);
+
     void deleteUser(int id);
 
     User updateUser(int id, User usr);

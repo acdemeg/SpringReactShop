@@ -17,7 +17,6 @@ public class UserDAOImpl implements UserDAO {
     private SessionFactory sessionFactory;
 
     @Override
-    @Transactional
     public List<User> getAllUsers() {
         Session session = sessionFactory.getCurrentSession();
         return session.createQuery("from User", User.class).getResultList();
@@ -33,6 +32,15 @@ public class UserDAOImpl implements UserDAO {
     public User getUser(int id) {
         Session session = sessionFactory.getCurrentSession();
         return session.get(User.class, id);
+    }
+
+    @Override
+    public User userLogin(User user) {
+        Session session = sessionFactory.getCurrentSession();
+        Query<User> query = session.createQuery("from User where email =: email", User.class);
+        query.setParameter("email", user.getEmail());
+        List<User> res = query.getResultList();
+        return res.isEmpty() ? null : res.get(0);
     }
 
     @Override
