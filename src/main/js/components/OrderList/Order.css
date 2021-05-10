@@ -1,0 +1,78 @@
+.order {
+    background-color: #EDEDED;
+    width: 720px;
+    margin-top: 5%; 
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 100;
+    border-radius: 10px;
+    border-color: black;
+    /* border: 3px double; */
+    box-sizing: border-box;
+}
+
+.order-header {
+  height: 44px;
+  width: 720px;
+  position: sticky;
+  border-color: black;
+  border-bottom: 3px double;
+  margin-bottom: 10px;
+}
+
+.order-footer {
+  height: 50px;
+  width: 720px;
+  position: sticky;
+  border-color: black;
+  border-top: 3px double;
+  margin-top: 10px;
+}
+
+.order-footer .left {
+  padding-top: 15px;
+  width: 547px;
+  float: left;
+}
+
+.order-footer .right {
+  padding-top: 0;
+  width: 167px;
+  float: right;
+  margin-right: 3px;
+}
+
+.actions-order {
+  height: 47px;
+  width: 170px;
+  line-height: 47px;
+  background-color: SteelBlue;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: Verdana;
+  border-radius:  0 0 7px;
+  margin-right: 3px;
+  z-index: 300;
+}
+
+.dropdown {
+  height: 47px;
+  width: 170px;
+  border-radius:  0 0 7px;
+}
+
+.actions-order:hover {
+  background-color: DodgerBlue;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+a.dropdown-item:hover {
+  background-color: gainsboro;
+}

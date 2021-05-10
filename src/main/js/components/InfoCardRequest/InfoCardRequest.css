@@ -1,0 +1,42 @@
+
+.info-request-form {
+  background-color: Gainsboro;
+  height: 150px;
+  width: 500px;
+  z-index: 50;
+  border-radius: 15px 15px 15px 15px ;
+  margin: 5% 5% 5% 35% ;
+  font-size: 15pt;
+  font-family: 'Times New Roman', Times, serif;
+  border: 3px double black;
+}
+
+.image-place-request {
+  background-color: WhiteSmoke;
+  height: 144px;
+  width: 144px;
+  float: left;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px 0 0 15px ;
+}
+
+.info-request-form-field {
+  font-family: Impact;
+  font-size: 16pt;
+  font-style: italic;
+}
+
+.action-button {
+  color: white;
+  background-color: SteelBlue;
+  height: 30px;
+  width: 120px;
+}
+
+.action-button:hover {
+  background-color: DodgerBlue;
+}
+

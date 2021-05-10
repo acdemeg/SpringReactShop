@@ -1,0 +1,12 @@
+.deliver-button  {
+  text-align: center;
+  background-color: SteelBlue;
+  color: white;
+  margin-top: 15px;
+  width: 120px;
+  height: 30px;
+}
+
+.deliver-button:hover  {
+  background-color: DodgerBlue;
+};

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Sigmar+One&display=swap');
+
+.googleFont {
+  width: 100%;
+  font-size: 40px;
+  font-family: 'Sigmar One', cursive;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.regForm {
+  margin: 5% auto 2% auto;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.inputTitles {
+  color: darkgoldenrod;
+  font-size: large;
+  text-align: left;
+  font-family: fantasy;
+  font-weight: normal;
+}
+
+.inputForm {
+  margin-bottom: 3%;
+}

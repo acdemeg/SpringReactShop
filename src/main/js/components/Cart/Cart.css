@@ -1,0 +1,129 @@
+.cart {
+    background-color: #EDEDED;
+    width: 720px;
+    margin-top: 5%; 
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 100;
+    border-radius: 10px;
+    border-color: black;
+    border: 3px double;
+    box-sizing: border-box;
+}
+
+.cart-header {
+  height: 44px;
+  width: 717px;
+  position: sticky;
+  border-color: black;
+  border-bottom: 3px double;
+  margin-bottom: 10px;
+}
+
+.cart-footer {
+  height: 50px;
+  width: 717px;
+  position: sticky;
+  border-color: black;
+  border-top: 3px double;
+}
+
+.cart-footer .left {
+  padding-top: 15px;
+  width: 547px;
+  float: left;
+}
+
+.cart-footer .right {
+  padding-top: 0;
+  width: 167px;
+  float: right;
+  margin-right: 3px;
+}
+
+.cart-goods {
+    height: 85px;
+    width: 720px;
+    align-content: center;
+    position: sticky;
+    margin-bottom: 50px;
+}
+
+.goods-operation { 
+  height: 80px;
+   width: 60px;
+   float: left;
+   text-align: center;
+   padding-top: 25px;
+}
+
+.cart-goods-image { 
+   height: 80px;
+    width: 80px;
+    float: left;
+    margin-left: 20px;
+    
+}
+
+.cart-goods-title {
+    height: 80px;
+    width: 300px;
+    float: left;
+    text-align: center;
+    padding-top: 25px;
+    
+}
+
+.cart-goods-price {
+    height: 80px;
+    width: 80px;
+    float: left;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.make-order {
+  text-align: center;
+  height: 47px;
+  width: 167px;
+  line-height: 47px;
+  background-color: SteelBlue;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: Verdana;
+  border-radius:  0 0 7px;
+  margin-right: 3px;
+  z-index: 300;
+}
+
+.m-o-disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.make-order:hover {
+  background-color: DodgerBlue;
+  cursor: pointer;
+}
+
+.note-exit-active {
+  animation: note 700ms ease-out forwards;
+}
+
+@keyframes note {
+  0% {
+    transform: translateX(0);
+  }
+
+  30% {
+    opacity: .7;
+    transform: translateX(30px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+}

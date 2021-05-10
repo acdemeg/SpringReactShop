@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Sigmar+One&display=swap');
+
+.delivery-status-title {
+    width: 100%;
+    font-size: 60px;
+    font-family: 'Sigmar One', cursive;
+    text-align: center;
+    margin-top: 2%;
+    background-color: inherit;
+}

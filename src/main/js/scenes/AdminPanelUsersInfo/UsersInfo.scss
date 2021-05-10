@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Sigmar+One&display=swap');
+
+.googleFont {
+  width: 100%;
+  font-size: 40px;
+  font-family: 'Sigmar One', cursive;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.listOrdersFont {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.wrapper {
+  margin-top: 5%;
+}
+
+.wrapperUser {
+  border-width: 20px 0;
+  border-style: solid;
+  border-color: cornflowerblue;
+}
+
+.searchBar {
+  background-color: whitesmoke;
+  min-width: 20%;
+  height: 500px;
+  float: left;
+}
+
+.searchInput {
+  height: 100px;
+  font-size: larger;
+  font-weight: 700;
+  padding-top: 20px;
+}
+
+.userList {
+  background-color: floralwhite;
+  height: 400px;
+  padding-left: 10px;
+  overflow-y: scroll;
+  font-size: larger;
+}
+.profileUser {
+  background-color: whitesmoke;
+  height: 500px;
+}
+
+.ordersUser {
+  margin-bottom: 10%;
+}
+
+.photoWrapper {
+  width: 600px;
+  height: 500px;
+  background-color: antiquewhite;
+  float: left;
+}
+
+.userPhoto {
+  height: 350px;
+  width: 300px;
+  margin: 75px auto;
+}
+
+.userInfo {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 500px;
+  margin-left: 20px;
+  font-size: x-large;
+}
+
+.userLine:hover {
+  background-color: turquoise;
+  color: white;
+}
+
+.ordersWrapper {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.orderSlotWrapper {
+  border-width: thin;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: black;
+  margin-top: 3%;
+}
+
+.orderHeader {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 2%;
+  padding-right: 2%;
+  color: white;
+  background-color: darkslategrey;
+  border-radius: 10px 10px 0 0;
+}
+
+.orderSlot {
+  display: flex;
+  min-height: 106px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 2%;
+  background-color: whitesmoke;
+  border-radius: 0 0 10px 10px
+}
+
+.orderField{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fieldSpace {
+  @extend .orderField;
+  justify-content: space-around;
+}
+
+.orderInfoField {
+  @extend .orderField;
+  justify-content: center;
+}
+
+.orderInfo {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  padding-right: 2%;
+}

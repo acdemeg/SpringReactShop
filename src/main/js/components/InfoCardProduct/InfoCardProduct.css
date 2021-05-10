@@ -1,0 +1,17 @@
+ .add-to-card  {
+  text-align: center;
+  background-color: SteelBlue;
+  color: white;
+  margin-top: 15px;
+  width: 150px;
+  height: 40px;
+}
+
+.add-disabled{
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.add-to-card:hover  {
+  background-color: DodgerBlue;
+};
