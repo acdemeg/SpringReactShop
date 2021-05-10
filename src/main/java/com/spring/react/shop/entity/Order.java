@@ -25,7 +25,7 @@ public class Order {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name="\"orderId\"")
-    private List<ProductsInOrder> productsInOrders;
+    private List<ProductInOrder> productsInOrder;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -52,12 +52,12 @@ public class Order {
         this.orderCode = orderCode;
     }
 
-    public List<ProductsInOrder> getProductsInOrders() {
-        return productsInOrders;
+    public List<ProductInOrder> getProductsInOrder() {
+        return productsInOrder;
     }
 
-    public void setProductsInOrders(List<ProductsInOrder> productsInOrders) {
-        this.productsInOrders = productsInOrders;
+    public void setProductsInOrder(List<ProductInOrder> productInOrder) {
+        this.productsInOrder = productInOrder;
     }
 
     public int getId() {

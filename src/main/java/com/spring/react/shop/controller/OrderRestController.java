@@ -1,7 +1,6 @@
 package com.spring.react.shop.controller;
 
 import com.spring.react.shop.entity.Order;
-import com.spring.react.shop.entity.ProductsInOrder;
 import com.spring.react.shop.exception_handling.NoSuchModelException;
 import com.spring.react.shop.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -5,7 +5,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name="\"Product_in_Orders\"")
-public class ProductsInOrder {
+public class ProductInOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,9 +21,9 @@ public class ProductsInOrder {
     @Column(name="\"orderId\"")
     private int orderId;
 
-    public ProductsInOrder(){}
+    public ProductInOrder(){}
 
-    public ProductsInOrder(int count, int productId, int orderId) {
+    public ProductInOrder(int count, int productId, int orderId) {
         this.count = count;
         this.productId = productId;
         this.orderId = orderId;
@@ -75,7 +75,7 @@ public class ProductsInOrder {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ProductsInOrder that = (ProductsInOrder) o;
+        ProductInOrder that = (ProductInOrder) o;
         return id == that.id && count == that.count && productId == that.productId && orderId == that.orderId;
     }
 

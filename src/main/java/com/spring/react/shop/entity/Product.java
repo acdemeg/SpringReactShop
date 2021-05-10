@@ -36,7 +36,7 @@ public class Product {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="\"productId\"")
-    private List<ProductsInOrder> productsInOrders;
+    private List<ProductInOrder> productInOrders;
 
     public Product(){}
 

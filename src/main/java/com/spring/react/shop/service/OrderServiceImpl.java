@@ -3,7 +3,7 @@ package com.spring.react.shop.service;
 import com.spring.react.shop.dao.OrderDAO;
 import com.spring.react.shop.entity.Order;
 import com.spring.react.shop.entity.Product;
-import com.spring.react.shop.entity.ProductsInOrder;
+import com.spring.react.shop.entity.ProductInOrder;
 import com.spring.react.shop.exception_handling.NoSuchModelException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,10 +44,10 @@ public class OrderServiceImpl implements OrderService{
         order.setOrderCode(orderCode);
         order.setId(id);
         //setting orderId
-        order.getProductsInOrders().forEach(ord -> ord.setOrderId(id));
+        order.getProductsInOrder().forEach(ord -> ord.setOrderId(id));
 
-        Map<Integer,Integer> mapProdIdCount = order.getProductsInOrders().stream()
-                .collect(Collectors.toMap(ProductsInOrder::getProductId, ProductsInOrder::getCount));
+        Map<Integer,Integer> mapProdIdCount = order.getProductsInOrder().stream()
+                .collect(Collectors.toMap(ProductInOrder::getProductId, ProductInOrder::getCount));
         //get product from order
         List<Product> products = productService.getProductsById(mapProdIdCount.keySet());
         //convert to map
