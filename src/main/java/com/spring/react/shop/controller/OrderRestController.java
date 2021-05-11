@@ -36,24 +36,23 @@ public class OrderRestController {
     }
 
     @DeleteMapping("/orders/{id}")
-    public String deleteOrder(@PathVariable int id){
+    public int deleteOrder(@PathVariable int id){
         Order order = orderService.getOrder(id);
 
         if(order == null){
             throw new NoSuchModelException("There is no order with ID = " + id + " in Database");
         }
-        orderService.deleteOrder(id);
-        return "Order with ID = " + id + " was deleted";
+        return orderService.deleteOrder(id);
     }
 
     @PostMapping("/orders")
-    public Order addNewOrder(@RequestBody Order order){
+    public String addNewOrder(@RequestBody Order order){
         orderService.saveOrder(order);
-        return order;
+        return "success";
     }
 
     @PatchMapping("/orders/{id}")
-    public Order updateOrder(@PathVariable int id, @RequestBody Order order){
+    public String updateOrder(@PathVariable int id, @RequestBody Order order){
         return orderService.updateOrder(id, order);
     }
 }

@@ -47,7 +47,7 @@ public class ProductRestController {
         return product;
     }
 
-    @PatchMapping("/products/{id}")
+    @PutMapping("/products/{id}")
     public Product updateProduct(@PathVariable int id, @RequestBody Product prod){
         return productService.updateProduct(id, prod);
     }

@@ -52,7 +52,7 @@ public class UserRestController {
         return userService.userLogin(user);
     }
 
-    @PatchMapping("/users/{id}")
+    @PutMapping("/users/{id}")
     public User updateUser(@PathVariable int id, @RequestBody User usr){
         return userService.updateUser(id, usr);
     }

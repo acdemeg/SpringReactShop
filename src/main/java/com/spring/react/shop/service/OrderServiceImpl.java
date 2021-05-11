@@ -71,24 +71,24 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     @Transactional
-    public void deleteOrder(int id) {
-        orderDAO.deleteOrder(id);
+    public int deleteOrder(int id) {
+        return orderDAO.deleteOrder(id);
     }
 
     @Override
     @Transactional
-    public Order updateOrder(int id, Order ord) {
+    public String updateOrder(int id, Order ord) {
         Order order = this.getOrder(id);
 
         if(order == null){
             throw new NoSuchModelException("There is no order with ID = " + id + " in Database");
         }
         order.setStatus(ord.getStatus());
-        return order;
+        return "success";
     }
 
     private String generateOrderCode(){
-        String codeStr = new Date().toString();
+        String codeStr = String.valueOf(new Date().getTime());
         codeStr = codeStr.substring(0, codeStr.length() - 8);
         String salt = Double.valueOf(Math.random() * 899 + 100).toString();
         salt = salt.substring(0, 3);

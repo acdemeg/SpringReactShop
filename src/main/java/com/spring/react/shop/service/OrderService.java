@@ -13,8 +13,8 @@ public interface OrderService {
 
     Order getOrder(int id);
 
-    void deleteOrder(int id);
+    int deleteOrder(int id);
 
-    Order updateOrder(int id, Order ord);
+    String updateOrder(int id, Order ord);
 }
 

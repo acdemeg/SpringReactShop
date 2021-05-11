@@ -289,7 +289,7 @@ const MAKE_ORDER = (orderTotal, items, alertText, userId, profile, dispatch) => 
   const order = {
     userId: userId,
     total: orderTotal,
-    products: items.map(item => ({
+    productsInOrder: items.map(item => ({
       productId: item.id,
       orderId: undefined,
       count: item.count,

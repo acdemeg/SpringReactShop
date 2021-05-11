@@ -111,7 +111,7 @@
               </configuration>
             </execution>
             <execution>
-              <id>npm run css:build &amp;&amp; webpack --mode production</id>
+              <id>webpack</id>
               <goals>
                 <goal>webpack</goal>
               </goals>

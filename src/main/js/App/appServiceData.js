@@ -8,23 +8,19 @@ class AppServiceData {
   }
 
   async getProducts() {
-    const res = await this.getResourse(`/api/products`);
-    return res;
+    return await this.getResourse(`/api/products`);
   }
 
   async getProductById(id) {
-    const res = await this.getResourse(`/api/products/${id}`);
-    return res;
+    return await this.getResourse(`/api/products/${id}`);
   }
 
   async getUsers() {
-    const res = await this.getResourse(`/api/users`);
-    return res;
+    return await this.getResourse(`/api/users`);
   }
 
   async getOrdersAll() {
-    const res = await this.getResourse(`/api/orders`);
-    return res;
+    return await this.getResourse(`/api/orders`);
   }
 
 
@@ -32,15 +28,13 @@ class AppServiceData {
     if(!id)
       return [];
 
-    const res = await this.getResourse(`/api/users/${id}/orders`);
-    return res;
+    return await this.getResourse(`/api/users/${id}/orders`);
   }
 
   async getProfileOfUser(id) {
     if(!id)
       return {};
-    const res = await this.getResourse(`/api/users/${id}`)
-    return res;
+    return await this.getResourse(`/api/users/${id}`);
   }
 
   async updateProfileById(id, data) {
@@ -52,13 +46,13 @@ class AppServiceData {
   async createOrder(order) {
     const res = await axios.post(`/api/orders`, order)
       .catch(err => `${err}`);
-    return res.data === 'succses';
+    return res.data === 'success';
   }
 
   async updateOrder(id, newStatus) {
     const res = await axios.patch(`/api/orders/${id}`, { status: newStatus })
       .catch(err => `${err}`);
-    return res.data === 'succses';
+    return res.data === 'success';
   }
 
   async updateProduct(id, product) {
@@ -75,18 +69,17 @@ class AppServiceData {
   async addProduct(product) {
     const res = await axios.post(`/api/products`, product)
       .catch(err => `${err}`);
-    return res.data === 'succses add product';
+    return res.data === 'success add product';
   }
 
   async deletProduct(id) {
-    const res = await axios.delete(`/api/products/${id}`);
-    return res;
+    return await axios.delete(`/api/products/${id}`);
   }
 
   async regUser(user) {
     const res = await axios.post(`/api/users/register`, user)
       .catch(err => `${err}`);
-    return res.data === 'succses registration';
+    return res.data === 'success registration';
   }
 
   async logInUser(user) {
