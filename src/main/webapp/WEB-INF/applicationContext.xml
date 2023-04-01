@@ -22,7 +22,7 @@
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
         <property name="driverClass" value="org.postgresql.Driver" />
-        <property name="jdbcUrl" value="jdbc:postgresql://localhost:5432/testDB?useSSL=false&amp;serverTimezone=UTC" />
+        <property name="jdbcUrl" value="jdbc:postgresql://db:5432/shop_db?useSSL=false&amp;serverTimezone=UTC" />
         <property name="user" value="postgres" />
         <property name="password" value="postgres" />
     </bean>

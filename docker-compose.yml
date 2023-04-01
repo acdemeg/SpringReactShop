@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  web:
+    image: acdemeg/web-projects:shop-web
+    restart: always
+    build:
+      context: .
+      dockerfile: ./docker-build/web/Dockerfile
+    tty: true
+    depends_on:
+      - db
+    ports:
+      - "8001:8080"
+
+  db:
+    image: acdemeg/web-projects:shop-db
+    build:
+      context: .
+      dockerfile: ./docker-build/db/Dockerfile
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5443:5432"
