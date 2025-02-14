@@ -3,7 +3,8 @@
 Этот репозиторий содержит пример проекта онлайн-магазина со
 следующим стеком технологий: ReactJs, Redux, Scss, SpringRest, Hibernate, SpringMVC, Postgresql.
 
-Live DEMO: http://devproject.site:8001
+# DEMO
+http://45.90.218.76:8001
 
 P.S. Этот проект является копией другого моего проекта -
 https://github.com/acdemeg/ReactNodeShop с переписанным на java(spring) бэкендом. Ознакомиться с демо проекта и более подробной информацией можно по ссылке выше.
